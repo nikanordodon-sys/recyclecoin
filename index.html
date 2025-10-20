@@ -10,7 +10,7 @@
     :root{
       --bg:#03060a;
       --card:#07121a;
-      --accent:#00ff99; /* neon green */
+      --accent:#00ff99;
       --muted:#9aa6b2;
       --glass: rgba(255,255,255,0.03);
       --accent-2:#00d28a;
@@ -53,7 +53,6 @@
     .neon:after{content:'';position:absolute;inset:0;border-radius:12px;box-shadow:0 8px 40px rgba(0,255,153,0.05);pointer-events:none}
     .copy{cursor:pointer;padding:6px 8px;border-radius:8px;border:1px dashed rgba(255,255,255,0.03);background:transparent;color:var(--muted)}
 
-    /* bilingual styling */
     .lang-toggle{display:flex;gap:8px}
     .lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);padding:8px 10px;border-radius:8px;cursor:pointer}
     .lang-btn.active{border-color:var(--accent);color:var(--accent)}
@@ -82,12 +81,12 @@
         <div class="card">
           <div style="display:flex;justify-content:space-between;align-items:center">
             <div>
-              <div class="badge">Eco‑futurist • Crowdfunding</div>
+              <div class="badge">Eco-futurist • Crowdfunding</div>
               <h2 id="title-ro" style="margin-top:10px">Recycle Coin — tokenul verde pentru reciclarea cauciucurilor</h2>
               <h2 id="title-en" style="margin-top:10px;display:none">Recycle Coin — the green token for tire recycling</h2>
 
-              <p id="desc-ro" class="muted small" style="margin-top:10px">Recycle Coin (RCY) este un token BEP‑20 creat pentru a strânge fonduri și a finanța implementarea unui proiect de reciclare a cauciucurilor uzate în Republica Moldova. Transparanță totală în gestionarea fondurilor, stimulente pentru comunitate și un impact real asupra mediului.</p>
-              <p id="desc-en" class="muted small" style="margin-top:10px;display:none">Recycle Coin (RCY) is a BEP‑20 token created to raise funds and finance the implementation of a tire recycling project in the Republic of Moldova. Full transparency in funds management, incentives for the community, and tangible environmental impact.</p>
+              <p id="desc-ro" class="muted small" style="margin-top:10px">Recycle Coin (RCY) este un token BEP-20 creat pentru a finanța dezvoltarea unei unități de reciclare a cauciucurilor uzate în Republica Moldova. Proiect transparent, orientat către sustenabilitate și profit pentru investitori.</p>
+              <p id="desc-en" class="muted small" style="margin-top:10px;display:none">Recycle Coin (RCY) is a BEP-20 token created to fund the development of a tire recycling facility in Moldova. A transparent, sustainable, and profit-oriented project for investors.</p>
             </div>
 
             <div style="text-align:right">
@@ -113,95 +112,31 @@
           </div>
 
           <div style="margin-top:14px;display:flex;gap:12px;align-items:center">
-            <a id="buyBtn" class="btn buy-btn" href="#" target="_blank">Cumpără RCY<span id="buySoon" style="margin-left:8px;font-weight:600;opacity:0.9">(În curând)</span></a>
+            <a 
+              id="buyBtn"
+              class="btn buy-btn"
+              href="https://pancakeswap.finance/info/pairs/0xC0d8700f5aeC5dF30A58cE7B78C1ACD146f5B662"
+              target="_blank"
+            >
+              💸 Cumpără RCY pe PancakeSwap
+            </a>
             <a class="btn ghost" href="https://bscscan.com/token/0xC77deC41d87B5FBa000cC832BCB1fbBeF32AF445" target="_blank">Vezi pe BscScan</a>
             <button id="connectWallet" class="btn outline" onclick="connectWallet()">Conectează Wallet (MetaMask)</button>
           </div>
 
-          <div class="section small">
-            <strong id="howto-ro">Cum adaugi tokenul în MetaMask</strong>
-            <strong id="howto-en" style="display:none">How to add the token to MetaMask</strong>
-            <ol style="margin-top:8px">
-              <li id="mt1-ro">Deschide MetaMask → Import Token → Custom Token</li>
-              <li id="mt1-en" style="display:none">Open MetaMask → Import Token → Custom Token</li>
-              <li id="mt2-ro">LiPește adresa contractului și confirmă</li>
-              <li id="mt2-en" style="display:none">Paste the contract address and confirm</li>
-              <li id="mt3-ro">Symbol: <strong>RCY</strong> · Decimals: <strong>18</strong></li>
-              <li id="mt3-en" style="display:none">Symbol: <strong>RCY</strong> · Decimals: <strong>18</strong></li>
-            </ol>
-          </div>
         </div>
-
-        <div class="card section">
-          <h3 id="tok-ro">Tokenomics</h3>
-          <h3 id="tok-en" style="display:none">Tokenomics</h3>
-          <div class="grid-3" style="margin-top:12px">
-            <div class="metric"><div class="muted">Public / Liquidity</div><strong>40%</strong></div>
-            <div class="metric"><div class="muted">Staking & Rewards</div><strong>20%</strong></div>
-            <div class="metric"><div class="muted">Marketing</div><strong>15%</strong></div>
-          </div>
-          <div class="grid-3" style="margin-top:12px">
-            <div class="metric"><div class="muted">Team</div><strong>10%</strong></div>
-            <div class="metric"><div class="muted">Reserve</div><strong>10%</strong></div>
-            <div class="metric"><div class="muted">Burn</div><strong>5%</strong></div>
-          </div>
-        </div>
-
-        <div class="card section">
-          <h3 id="road-ro">Roadmap (sumar)</h3>
-          <h3 id="road-en" style="display:none">Roadmap (summary)</h3>
-          <div class="roadmap" style="margin-top:10px">
-            <div class="step"><strong>Faza 1 — Lansare</strong><div class="muted small">Deploy token • Verificare BscScan • Logo public • Lichiditate inițială</div></div>
-            <div class="step"><strong>Faza 2 — Creștere</strong><div class="muted small">Dashboard staking • Campanie Recycle & Earn • Listări DEX</div></div>
-            <div class="step"><strong>Faza 3 — Parteneriate</strong><div class="muted small">Colaborare cu centre de reciclare • NFT Green Badges • Extindere</div></div>
-          </div>
-        </div>
-
       </section>
-
-      <aside class="right">
-        <div class="card">
-          <div class="card-title"><h3>Quick Links</h3><div class="muted small">Contract verificat</div></div>
-          <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
-            <a class="ghost" href="https://bscscan.com/token/0xC77deC41d87B5FBa000cC832BCB1fbBeF32AF445" target="_blank">BscScan Contract</a>
-            <a class="ghost" href="#" onclick="alert('PancakeSwap link va fi activat după lansare')">PancakeSwap – Buy (soon)</a>
-            <a class="ghost" href="#contact">Contact / Support</a>
-          </div>
-
-            <div style="margin-top:14px" class="small muted">
-            <strong>Tx Hash (deploy)</strong>
-            <pre style="background:transparent">0x626d2a5d9722c2c71de8d0d85109ba91fdd96eed52d185658ab73c0fe183f5d8</pre>
-          </div>
-        </div>
-
-        <div class="card section neon">
-          <h3 id="why-ro">De ce RCY?</h3>
-          <h3 id="why-en" style="display:none">Why RCY?</h3>
-          <p id="whyText-ro" class="muted small">Recycle Coin transformă donațiile în proiecte concrete: fiecare contribuție sprijină construcția unei unități de reciclare a cauciucurilor în Moldova, reducând poluarea și generând valoare economică locală.</p>
-          <p id="whyText-en" class="muted small" style="display:none">Recycle Coin turns donations into concrete projects: each contribution supports building a tire recycling facility in Moldova, reducing pollution and creating local economic value.</p>
-          <div style="margin-top:12px;display:flex;gap:8px">
-            <a class="buy-btn" href="#" onclick="alert('În curând: Recycle & Earn')">Recycle & Earn</a>
-            <a class="ghost" href="#" onclick="alert('Whitepaper coming soon')">Whitepaper</a>
-          </div>
-        </div>
-
-        <div class="card section" id="contact">
-          <h3>Contact / Social</h3>
-          <p class="muted small">✉️ Email: <a href="mailto:nikanordodon@gmail.com">nikanordodon@gmail.com</a></p>
-          <p class="muted small">💬 Telegram: <a href="https://t.me/+37369126531">+373 691 26531</a></p>
-          <p class="muted small">📞 WhatsApp: <a href="https://wa.me/37369126531">+373 691 26531</a></p>
-        </div>
-
-      </aside>
     </main>
 
     <footer>
-      © Recycle Coin — Pentru un viitor mai verde. Contract: <a href="https://bscscan.com/token/0xC77deC41d87B5FBa000cC832BCB1fbBeF32AF445" style="color:var(--accent)" target="_blank">0xC77...F445</a>
+      © Recycle Coin — Pentru un viitor mai verde. Contract: 
+      <a href="https://bscscan.com/token/0xC77deC41d87B5FBa000cC832BCB1fbBeF32AF445" style="color:var(--accent)" target="_blank">
+        0xC77...F445
+      </a>
     </footer>
   </div>
 
   <script>
-    // language toggle
     const btnRo = document.getElementById('btn-ro');
     const btnEn = document.getElementById('btn-en');
     btnRo.addEventListener('click', ()=> setLang('ro'));
@@ -210,31 +145,17 @@
       const show = lang === 'ro';
       document.getElementById('title-ro').style.display = show ? '' : 'none';
       document.getElementById('desc-ro').style.display = show ? '' : 'none';
-      document.getElementById('howto-ro').style.display = show ? '' : 'none';
-      document.getElementById('tok-ro').style.display = show ? '' : 'none';
-      document.getElementById('road-ro').style.display = show ? '' : 'none';
-      document.getElementById('why-ro').style.display = show ? '' : 'none';
-      document.getElementById('whyText-ro').style.display = show ? '' : 'none';
-
       document.getElementById('title-en').style.display = show ? 'none' : '';
       document.getElementById('desc-en').style.display = show ? 'none' : '';
-      document.getElementById('howto-en').style.display = show ? 'none' : '';
-      document.getElementById('tok-en').style.display = show ? 'none' : '';
-      document.getElementById('road-en').style.display = show ? 'none' : '';
-      document.getElementById('why-en').style.display = show ? 'none' : '';
-      document.getElementById('whyText-en').style.display = show ? 'none' : '';
-
       btnRo.classList.toggle('active', show);
       btnEn.classList.toggle('active', !show);
     }
 
-    // copy contract address
     function copyContract(){
       const text = document.getElementById('contract').innerText;
       navigator.clipboard.writeText(text).then(()=>{alert('Adresa contractului a fost copiată în clipboard')});
     }
 
-    // Wallet connect (simple MetaMask) - no external libs
     async function connectWallet(){
       if(!window.ethereum){
         alert('MetaMask nu este instalat. Instalează-l și încearcă din nou.');
@@ -251,7 +172,6 @@
       }
     }
 
-    // initial language
     setLang('ro');
   </script>
 </body>
