@@ -93,11 +93,12 @@
             <div class="metric"><div class="muted">Network</div><strong>BNB Smart Chain</strong></div>
           </div>
 
-          <!-- 🔹 Buton actualizat -->
           <div style="margin-top:14px;display:flex;gap:12px;align-items:center">
+            <!-- ONLY THIS LINK CHANGED: opens PancakeSwap swap with RCY preselected -->
             <a id="buyBtn" class="btn buy-btn" 
-               href="https://pancakeswap.finance/swap?outputCurrency=0xC0d8700f5aeC5dF30A58cE7B78C1ACD146f5B662" 
+               href="https://pancakeswap.finance/#/swap?outputCurrency=0xC77deC41d87B5FBa000cC832BCB1fbBeF32AF445&inputCurrency=BNB" 
                target="_blank">Cumpără RCY</a>
+
             <a class="btn ghost" href="https://bscscan.com/token/0xC77deC41d87B5FBa000cC832BCB1fbBeF32AF445" target="_blank">Vezi pe BscScan</a>
             <button id="connectWallet" class="btn outline" onclick="connectWallet()">Conectează Wallet (MetaMask)</button>
           </div>
@@ -112,3 +113,107 @@
             </ol>
           </div>
         </div>
+
+        <div class="card section">
+          <h3>Tokenomics</h3>
+          <div class="grid-3" style="margin-top:12px">
+            <div class="metric"><div class="muted">Public / Liquidity</div><strong>40%</strong></div>
+            <div class="metric"><div class="muted">Staking & Rewards</div><strong>20%</strong></div>
+            <div class="metric"><div class="muted">Marketing</div><strong>15%</strong></div>
+          </div>
+          <div class="grid-3" style="margin-top:12px">
+            <div class="metric"><div class="muted">Team</div><strong>10%</strong></div>
+            <div class="metric"><div class="muted">Reserve</div><strong>10%</strong></div>
+            <div class="metric"><div class="muted">Burn</div><strong>5%</strong></div>
+          </div>
+        </div>
+
+        <div class="card section">
+          <h3>Roadmap</h3>
+          <div class="roadmap" style="margin-top:10px">
+            <div class="step"><strong>Faza 1 — Lansare</strong><div class="muted small">Deploy token • Verificare BscScan • Logo public • Lichiditate inițială</div></div>
+            <div class="step"><strong>Faza 2 — Creștere</strong><div class="muted small">Dashboard staking • Campanie Recycle & Earn • Listări DEX</div></div>
+            <div class="step"><strong>Faza 3 — Parteneriate</strong><div class="muted small">Colaborare cu centre de reciclare • NFT Green Badges • Extindere</div></div>
+          </div>
+        </div>
+
+      </section>
+
+      <aside class="right">
+        <div class="card">
+          <h3>Quick Links</h3>
+          <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+            <a class="ghost" href="https://bscscan.com/token/0xC77deC41d87B5FBa000cC832BCB1fbBeF32AF445" target="_blank">BscScan Contract</a>
+            <a class="ghost" href="https://pancakeswap.finance/info/pairs/0xC0d8700f5aeC5dF30A58cE7B78C1ACD146f5B662" target="_blank">PancakeSwap – Buy RCY</a>
+            <a class="ghost" href="#contact">Contact / Support</a>
+          </div>
+          <div style="margin-top:14px" class="small muted">
+            <strong>Tx Hash (deploy)</strong>
+            <pre style="background:transparent">0x626d2a5d9722c2c71de8d0d85109ba91fdd96eed52d185658ab73c0fe183f5d8</pre>
+          </div>
+        </div>
+
+        <div class="card section neon">
+          <h3>De ce RCY?</h3>
+          <p class="muted small">Recycle Coin transformă donațiile în proiecte concrete: fiecare contribuție sprijină construcția unei unități de reciclare a cauciucurilor în Moldova, reducând poluarea și generând valoare economică locală.</p>
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <a class="buy-btn" href="https://pancakeswap.finance/info/pairs/0xC0d8700f5aeC5dF30A58cE7B78C1ACD146f5B662" target="_blank">Recycle & Earn</a>
+            <a class="ghost" href="#" onclick="alert('Whitepaper coming soon')">Whitepaper</a>
+          </div>
+        </div>
+
+        <div class="card section" id="contact">
+          <h3>Contact / Social</h3>
+          <p class="muted small">✉️ Email: <a href="mailto:nikanordodon@gmail.com">nikanordodon@gmail.com</a></p>
+          <p class="muted small">💬 Telegram: <a href="https://t.me/+37369126531">+373 691 26531</a></p>
+          <p class="muted small">📞 WhatsApp: <a href="https://wa.me/37369126531">+373 691 26531</a></p>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      © Recycle Coin — Pentru un viitor mai verde. Contract: <a href="https://bscscan.com/token/0xC77deC41d87B5FBa000cC832BCB1fbBeF32AF445" style="color:var(--accent)" target="_blank">0xC77...F445</a>
+    </footer>
+  </div>
+
+  <script>
+    const btnRo = document.getElementById('btn-ro');
+    const btnEn = document.getElementById('btn-en');
+    btnRo.addEventListener('click', ()=> setLang('ro'));
+    btnEn.addEventListener('click', ()=> setLang('en'));
+    function setLang(lang){
+      const show = lang === 'ro';
+      document.getElementById('title-ro').style.display = show ? '' : 'none';
+      document.getElementById('desc-ro').style.display = show ? '' : 'none';
+      document.getElementById('title-en').style.display = show ? 'none' : '';
+      document.getElementById('desc-en').style.display = show ? 'none' : '';
+      btnRo.classList.toggle('active', show);
+      btnEn.classList.toggle('active', !show);
+    }
+
+    function copyContract(){
+      const text = document.getElementById('contract').innerText;
+      navigator.clipboard.writeText(text).then(()=>{alert('Adresa contractului a fost copiată în clipboard')});
+    }
+
+    async function connectWallet(){
+      if(!window.ethereum){
+        alert('MetaMask nu este instalat. Instalează-l și încearcă din nou.');
+        return;
+      }
+      try{
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const acct = accounts[0];
+        document.getElementById('connectWallet').innerText = acct.slice(0,6)+'...'+acct.slice(-4);
+        alert('Wallet conectat: '+acct);
+      }catch(e){
+        console.error(e);
+        alert('Conectare eșuată: ' + (e.message || e));
+      }
+    }
+
+    setLang('ro');
+  </script>
+</body>
+</html>
